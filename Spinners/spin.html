@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+h1,h3{ margin: 0; padding: 0; }
+
+.spin1,.spin2,.spin3,.spin4,.spin5,.spin6,.spin7,.spin8,.spin9{float: left;margin-right: 10px;/*quitar*/}
+
+@keyframes gira0 {
+    100%{ transform: rotate(-360deg); } 
+}
+
+@keyframes gira1 {
+    0%{ transform:rotate(0deg); }
+    100%{ transform: rotate(360deg); } 
+}
+
+@keyframes gira2 {
+    0%{ transform:rotate(0deg);opacity: 100%; }
+    80% { opacity: 30%; }
+    100%{ transform: rotate(360deg); opacity: 100%;} 
+}
+
+@keyframes gira3 {
+    0%{
+        transform:rotate(0deg);
+        background: linear-gradient(#aaa0,red) border-box;
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        transition-duration: 3s;
+    }
+    50%{
+        transform: rotate(180deg);
+        background: linear-gradient(#aaa0,green) border-box;
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        transition-duration: 3s;
+    }
+    100%{
+        transform: rotate(360deg);
+        background: linear-gradient(#aaa0,blue) border-box;
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        transition-duration: 3s;
+    } 
+}
+
+.spin1{
+    border: 4px solid transparent;
+    width: 17px;
+    height: 17px;
+    border-radius: 10%;
+    background: radial-gradient(#aaa0,#aaa0,#aaa0,#aaa0,#aaa0,#09f,#09f);
+    animation: gira1 1.5s linear infinite;
+}
+
+.spin2{
+    border: 4px solid rgba(0,0,0,.1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-left-color: #09f;
+    animation: gira1 1.5s linear infinite;
+}
+
+.spin3{
+    border: 4px solid transparent;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(#09f0,#bde5ff,#6fc3ef,#2396d4) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    animation: gira1 1.5s linear infinite;
+}
+
+.spin4{
+    border: 4px solid transparent;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-left-color: #09f;
+    animation: gira2 1.5s linear infinite;
+}
+.spin4::before{
+    content: '➤';
+    transform: rotate(307deg);
+    font-size: .8rem;
+    color: #09f;
+    position: absolute;
+    margin: -9px 0 0 -4px;
+}
+
+.spin5{
+    border: 4px solid transparent;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-left-color: #09f;
+    border-right-color: #09f;
+    animation: gira1 1.5s linear infinite;
+}
+.spin5::before{
+    content: '';
+    border: 3px solid transparent;
+    width: 12.5px;
+    height: 12.5px;
+    border-radius: 50%;
+    position: absolute;
+    border-left-color: #57bcff;
+    border-right-color: #57bcff;
+    margin: 1px 0 0 1px;
+    animation: gira0 1s linear infinite;
+}
+
+.spin6{
+    border: 4px solid transparent;
+    width: 20px;
+    height: 20px;
+    animation: gira2 1.5s linear infinite;
+}
+.spin6::before{
+    content: '·';
+    font-size: 4rem;
+    color: #09f;
+    position: absolute;
+    margin: -14px 0 0 0;
+}
+.spin6 b{
+    font-size: 2rem;
+    color: #43b4ff;
+    position: absolute;
+    margin: -7px 0 0 14px;
+}
+.spin6::after{
+    content: '·';
+    font-size: 2.2rem;
+    color: #92d3ff;
+    position: absolute;
+    margin: -5px 0 0 16px;
+}
+
+.spin7{
+    border: 4px solid rgba(0,0,0,.1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: gira3 1.5s linear infinite;
+}
+
+.spin8{
+    border: 2px solid rgba(0,0,0,.07);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border-left-color: green;
+    animation: gira1 2s linear infinite;
+}
+
+.spin8 b{
+    color: white;
+    width: 19px;
+    height: 19px;
+    font: bold .9rem Verdana;
+    text-align: center;
+    background: blue;
+    position: absolute;
+    border-radius: 50%;
+    margin: 3px 0 0 3px;
+    animation: gira0 2s linear infinite;
+}
+
+.spin9{
+    border: 4px solid transparent;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-left-color: red;
+    animation: gira1 1s linear infinite;
+}
+.spin9::before{
+    content: '';
+    border: 4px solid transparent;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    border-top-color: green;
+    border-left-color: green;
+    margin: -4px 0 0 -4px;
+    animation: gira1 2s linear infinite;
+}
+.spin9:after{
+    content: '';
+    border: 4px solid transparent;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    border-bottom-color: blue;
+    margin: -4px 0 0 -4px;
+    animation: gira1 4s linear infinite;
+}
+
+    </style>
+</head>
+<body>
+<h1>Spinners cargando de alta calidad de 1kb cada uno</h1>  
+<h3>Creado por Mg. Sc. Harold Coila</h3> 
+<div class="spin1"></div>
+<div class="spin2"></div>
+<div class="spin3"></div>
+
+<div style="clear:both;float:left;width: 100%;height:20%;border-bottom:1px solid gray;margin:10px auto;"></div>
+
+<div class="spin4"></div>
+<div class="spin5"></div>
+<div class="spin6"><b>.</b></div>
+
+<div style="clear:both;float:left;width: 100%;height:20%;border-bottom:1px solid gray;margin:10px auto;"></div>
+
+<div class="spin7"></div>
+<div class="spin8"><b>H</b></div>
+<div class="spin9"></div>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+* {box-sizing: border-box;}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;600&display=swap');
+
+html{
+    -webkit-text-size-adjust:100%;
+	-ms-text-size-adjust:100%;
+}
+body{
+    clear:both;
+	width:100%;
+	margin:0;
+    font: normal 14px 'Nunito';
+    color:#2e5068;
+}
+.top{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    color: white;
+    cursor: default;
+    background-color: #597d97;
+}
+.pre{
+    float: left;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 300;
+    padding: 8px;
+    width: 65%;
+}
+.pre::before{
+    content: '<';
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 4% 0 2%;
+}
+.obs{
+    float: left;
+    font-size: 9px;
+    font-weight: 500;
+    text-align: right;
+    padding: 6px;
+    width: 25%;
+}
+.menu{
+    float: right;
+    width: 10%;
+    cursor: pointer;
+}
+.menu::before{
+    content: '☰';
+    font-size: 25px;
+    margin: auto 24%;
+}
+.cont{
+    width: 87%;
+    margin: 30px auto 130px auto;
+    padding: 16px;
+    background: white;
+    box-shadow: 0px -1px 7px 1px rgb(0 0 0 / 20%);
+}
+.cont h1{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px 0 4px 0;
+}
+
+form em{
+    position: absolute;
+    user-select: none;
+    background-color: white;
+    margin: 2px 0 0 7px;
+    padding: 0 5px;
+    font-style: normal;
+    font-size: 11px;
+    color: #597d97;
+}
+
+form p{
+    width: 99%;
+    margin: 0 auto;
+    color: black;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: justify;
+}
+
+input,select{
+    width: 100%;
+    margin: 10px auto;
+    padding: 4px 0 0 12px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 100;
+    border: 1px solid #e2e3e1;
+    border-radius: 6px;
+}
+
+input:focus,select:focus {
+    outline: none;
+    border: 1px solid #2e5068;
+    color:#2e5068;
+}
+
+
+.selectdiv { position: relative; }
+
+.selectdiv:after {
+    content: '˅';
+    font: 800 16px system-ui;
+    color: #333;
+    right: 14px;
+    top: 6px;
+    height: 26px;
+    padding: 15px 5px 0 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+/* IE11 hide native button */
+select::-ms-expand { display: none; }
+
+.selectdiv select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 40px;
+    margin: 10px 0px;
+    padding: 5px 0 0 12px;
+    font-size: 18px;
+    border: 1px solid #e2e3e1;
+    border-radius: 6px;
+    -ms-word-break: normal;
+    word-break: normal;
+}
+
+.resu{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    border-top: 1px solid #e5e5e5;
+    background-color: white;
+}
+.res1{
+    float: left;
+    width: 60%;
+    color:#597d97;
+}
+.res1::before{
+    content: '∧';
+    font-size: 14px;
+    font-weight: 800;
+    padding: 0 2% 0 1%;
+}
+.res2{
+    float: right;
+    width: 40%;
+    text-align: right;
+    color: black;
+}
+.btn{
+    clear: both;
+    width: 100%;
+    margin: 0 auto;
+}
+button{
+    float: left;
+    height: 35px;
+    color: white;
+    border: 0;
+    border-radius: 7px;
+    transition: .3s;
+}
+button.duogray{
+    background-color: #b9b6b4;
+    width: 49%;
+    margin: 5px 1% 5px 0;
+}
+button.duored{
+    background: #d7573c;
+    width: 49%;
+    margin: 5px 0 5px 1%;
+}
+
+button.uniblue{
+    background: #2e5066;
+    width: 100%;
+    margin: 5px 0;
+}
+</style>
+<body>
+    <div class="top">
+        <div class="pre">Pre-selecci&oacute;n</div>
+        <div class="obs">VALOR EN CLP<BR>Pesos chilenos</div>
+        <div class="menu"></div>
+    </div>
+    <div class="cont">
+        <h1>Registro virtual</h1>
+        <form action="">
+            <em>Nombres</em><input type="text" name="" id="" value="Wolfgang">
+            <em>Apellido paterno</em><input type="text" name="" id="" value="Amadeus">
+            <em>Apellido materno</em><input type="text" name="" id="" value="Mozart">
+            
+            <div class="selectdiv">
+                <em>G&eacute;nero</em>
+                <select>
+                    <option selected disabled>Seleccione un g&eacute;nero</option>
+                    <option>Masculino</option>
+                    <option>Femenino</option>
+                    <option>Prefiero no decirlo</option>
+                </select>
+            </div>
+
+            <div class="selectdiv">
+                <em>Nacionalidad</em>
+                <select>
+                    <option selected disabled>Seleccione una nacionalidad</option>
+                    <option>Brasile&ntilde;a</option>
+                    <option>Chilena</option>
+                    <option>Peruana</option>
+                </select>
+            </div>  
+            
+            <div class="selectdiv">
+                <em>Tipo de documento</em>
+                <select>
+                    <option selected disabled>Seleccione un documento</option>
+                    <option>DNI</option>
+                    <option>Pasaporte</option>
+                    <option>Carnet de extranjer&iacute;a</option>
+                </select>
+            </div>
+            
+            <em>N&uacute;mero de documento</em><input type="text" name="" id="" value="">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae pariatur perspiciatis deleniti debitis doloribus quasi consequatur commodi sit vero delectus quam minima asperiores repudiandae accusantium fugiat, quod id ullam! Tenetur!
+            Itaque, laborum. Dolore magni praesentium consectetur rerum similique, voluptas delectus eligendi eveniet quia inventore velit explicabo, ducimus reiciendis! Fuga similique laboriosam eligendi doloremque sit at, earum amet. Sapiente, iusto temporibus!</p>
+        </form>
+     </div>
+    <div class="resu">
+        <div class="res1">Precio final</div>
+        <div class="res2">CLP 72000</div>
+        <div class="btn">
+            <button class="duogray">Cancelar</button>
+            <button class="duored">Pagar</button>
+        </div>
+        <div class="btn">
+            <button class="uniblue">Siguiente</button>
+        </div>
+    </div>
+</body>
+</html>
